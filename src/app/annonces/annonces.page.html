@@ -1,0 +1,26 @@
+<app-navbar [titre]="titre"></app-navbar>
+
+
+<ion-content>
+  <!-- Bouton pour créer une nouvelle annonce -->
+
+    <ion-button  color="secondary" expand="block" routerLink="/all-annonces">
+     Tous les annonces
+    </ion-button>
+    <ion-button  color="primary" expand="block" routerLink="/create-annonce">Créer une annonce</ion-button>
+
+
+  <!-- Liste des annonces -->
+  <ion-list *ngFor="let annonce of annonces">
+    <ion-item>
+      <ion-label>{{ annonce.titre }}</ion-label>
+      <ion-button expand="block" routerLink="/update-annonce/{{ annonce.id }}" icon-only>
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      
+      <ion-button color="danger" (click)="deleteAnnonce(annonce.id)" icon-only>
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>   </ion-item>
+  </ion-list>
+
+</ion-content>

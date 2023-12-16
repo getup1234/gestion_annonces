@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">GESTION DES ANNONCES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating" class="ion-text-wrap">Email</ion-label>
+    <ion-input type="email" [(ngModel)]="credentials.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" class="ion-text-wrap">Password</ion-label>
+    <ion-input type="password" [(ngModel)]="credentials.password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="login()" class="ion-margin-top">Login</ion-button>
+
+  <ion-text color="danger" *ngIf="errorMessage" class="ion-text-center ion-padding-top">{{ errorMessage }}</ion-text>
+</ion-content>

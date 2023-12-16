@@ -1,0 +1,47 @@
+<app-navbar [titre]="titre"></app-navbar>
+
+<ion-content fullscreen>
+  <!-- Formulaire pour la création d'une nouvelle annonce -->
+  <form (ngSubmit)="createAnnonce()">
+    <ion-item>
+      <ion-label position="floating" color="primary">
+        <ion-icon name="newspaper-outline" slot="start"></ion-icon> <!-- Icône pour le titre -->
+        Titre
+      </ion-label>
+      <ion-input type="text" [ngModelOptions]="{ standalone: true }" [(ngModel)]="newAnnonceData.titre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">
+        <ion-icon name="list-outline" slot="start"></ion-icon> <!-- Icône pour la catégorie -->
+        Catégorie
+      </ion-label>
+      <ion-select [ngModelOptions]="{ standalone: true }" [(ngModel)]="newAnnonceData.categorie" placeholder="Choisissez une catégorie">
+        <ion-select-option value="vehicules">Véhicules</ion-select-option>
+        <ion-select-option value="immobilier">Immobilier</ion-select-option>
+        <!-- Autres options de catégorie -->
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">
+        <ion-icon name="pricetag-outline" slot="start"></ion-icon> <!-- Icône pour le prix -->
+        Prix
+      </ion-label>
+      <ion-input type="number" [ngModelOptions]="{ standalone: true }" [(ngModel)]="newAnnonceData.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">
+        <ion-icon name="location-outline" slot="start"></ion-icon> <!-- Icône pour la localisation -->
+        Localisation
+      </ion-label>
+      <ion-input type="text" [ngModelOptions]="{ standalone: true }" [(ngModel)]="newAnnonceData.location"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">
+        <ion-icon name="document-text-outline" slot="start"></ion-icon> <!-- Icône pour la description -->
+        Description
+      </ion-label>
+      <ion-textarea rows="6" [ngModelOptions]="{ standalone: true }" [(ngModel)]="newAnnonceData.description"></ion-textarea>
+    </ion-item>
+    <ion-button expand="block" type="submit">Créer Annonce</ion-button>
+  </form>
+</ion-content>

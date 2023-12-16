@@ -1,0 +1,25 @@
+
+  
+  ion-content {
+    ion-button {
+      margin-bottom: 10px; /* Espacement entre les boutons */
+    }
+  
+    ion-list {
+      ion-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+  
+        ion-label {
+          flex: 1;
+          margin-right: 10px; /* Espacement entre le texte de l'annonce et les boutons */
+        }
+  
+        ion-button {
+          margin-left: 5px; /* Espacement entre les boutons */
+        }
+      }
+    }
+  }
+  
